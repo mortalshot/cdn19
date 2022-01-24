@@ -8,35 +8,67 @@ import * as noUiSlider from 'nouislider';
 // import 'nouislider/dist/nouislider.css';
 
 export function rangeInit() {
-	const priceSlider = document.querySelector('#range');
-	if (priceSlider) {
-		let textFrom = priceSlider.getAttribute('data-from');
-		let textTo = priceSlider.getAttribute('data-to');
-		noUiSlider.create(priceSlider, {
-			start: 0, // [0,200000]
+	const storageSlider = document.getElementById('storageSlider');
+	const trafficSlider = document.querySelector('#trafficSlider');
+	const result = document.getElementById('calculatorResult');
+	const storagePrice = document.getElementById('storagePrice');
+	const trafficPrice = document.getElementById('trafficPrice');
+
+	if (storageSlider) {
+		noUiSlider.create(storageSlider, {
+			start: 5, // [0,200000]
 			connect: [true, false],
+			step: 1,
 			range: {
-				'min': [0],
-				'max': [200000]
-			}
+				'min': [1],
+				'max': [10]
+			},
+			tooltips: [
+				wNumb({
+					decimals: 0,
+					suffix: ' Tb',
+				})
+			],
 		});
-		/*
-		const priceStart = document.getElementById('price-start');
-		const priceEnd = document.getElementById('price-end');
-		priceStart.addEventListener('change', setPriceValues);
-		priceEnd.addEventListener('change', setPriceValues);
-		*/
-		function setPriceValues() {
-			let priceStartValue;
-			let priceEndValue;
-			if (priceStart.value != '') {
-				priceStartValue = priceStart.value;
-			}
-			if (priceEnd.value != '') {
-				priceEndValue = priceEnd.value;
-			}
-			priceSlider.noUiSlider.set([priceStartValue, priceEndValue]);
-		}
 	}
+
+	if (trafficSlider) {
+		noUiSlider.create(trafficSlider, {
+			start: 3, // [0,200000]
+			connect: [true, false],
+			step: 1,
+			range: {
+				'min': [1],
+				'max': [10]
+			},
+			tooltips: [
+				wNumb({
+					decimals: 0,
+					suffix: ' Gdps',
+				})
+			],
+		});
+	}
+
+	storageSlider.noUiSlider.on('update', function (values) {
+		console.log(Number(values));
+		if (trafficSlider) {
+			let trafficSliderValue = trafficSlider.noUiSlider.get();
+
+			result.innerHTML = (Number(values * storagePrice.innerHTML + trafficSliderValue * trafficPrice.innerHTML)).toFixed(2);
+		} else {
+			result.innerHTML = (values * storagePrice.innerHTML).toFixed(2);
+		}
+	})
+
+	trafficSlider.noUiSlider.on('update', function (values) {
+		if (storageSlider) {
+			let storageSliderValue = storageSlider.noUiSlider.get();
+
+			result.innerHTML = (Number(values * trafficPrice.innerHTML + storageSliderValue * storagePrice.innerHTML)).toFixed(2);
+		} else {
+			result.innerHTML = (values * trafficPrice.innerHTML).toFixed(2);
+		}
+	})
 }
 rangeInit();

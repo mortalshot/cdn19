@@ -1,3 +1,497 @@
-//====================================================================================================
+// home ====================================================================================================
+.main {
+    @include adaptiveValue("padding-top", 120, 56);
+    @include adaptiveValue("margin-bottom", 120, 56);
 
-//====================================================================================================
+    @media (max-width: $mobileSmall) {
+        overflow: hidden;
+    }
+
+    // .main__container
+    &__container {
+    }
+
+    // .main__body
+    &__body {
+        max-width: rem(674);
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 112, 72);
+        }
+
+        & > * {
+            &:not(:last-child) {
+                @include adaptiveValue("margin-bottom", 40, 24);
+            }
+        }
+    }
+
+    // .main__title
+    &__title {
+    }
+
+    // .main__image
+    &__image {
+        max-width: rem(981);
+        margin-left: auto;
+        margin-right: auto;
+
+        @media (max-width: $mobileSmall) {
+            margin-left: rem(-20);
+            margin-right: rem(-20);
+            transform: scale(1.6);
+        }
+    }
+}
+
+// calculator ====================================================================================================
+.parameter {
+    display: grid;
+    align-items: center;
+    gap: rem(50);
+
+    @media (min-width: $mobileSmall) {
+        gap: rem(20);
+        grid-template-columns: percent(100, 687) 1fr;
+    }
+
+    // .parameter__caption
+    &__caption {
+        @include adaptiveValue("font-size", 18, 14);
+
+        @media (max-width: $mobileSmall) {
+            margin-left: rem(-10);
+        }
+    }
+
+    // .parameter__slider
+    &__slider {
+    }
+}
+
+.tariff {
+    display: grid;
+    gap: rem(16);
+
+    // .tariff__caption
+    &__caption {
+        font-size: rem(14);
+        line-height: 1;
+    }
+
+    // .tariff__price
+    &__price {
+        font-weight: 700;
+        @include adaptiveValue("font-size", 60, 30);
+        line-height: 1;
+    }
+}
+
+.total-result {
+    display: grid;
+    gap: rem(16);
+
+    // .total-result__caption
+    &__caption {
+        font-size: rem(14);
+        line-height: 1;
+    }
+
+    // .total-result__value
+    &__value {
+        font-weight: 700;
+        @include adaptiveValue("font-size", 60, 30);
+        line-height: 1;
+    }
+}
+
+.calculator {
+    @include adaptiveValue("padding-top", 120, 56);
+    @include adaptiveValue("margin-bottom", 120, 56);
+
+    // .calculator__container
+    &__container {
+        max-width: rem(1050);
+
+        @media (min-width: $mobile) {
+            padding-left: rem(60);
+            padding-right: rem(60);
+        }
+    }
+
+    // .calculator__top
+    &__top {
+        display: grid;
+        gap: rem(48);
+
+        @media (min-width: $mobile) {
+            gap: rem(20);
+            grid-template-columns: percent(330, 1050) 1fr;
+        }
+
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 120, 48);
+        }
+    }
+
+    // .calculator__title
+    &__title {
+    }
+
+    // .calculator__parameters
+    &__parameters {
+        display: grid;
+        gap: rem(40);
+
+        @media (max-width: $mobile) {
+            padding-right: rem(60);
+        }
+        @media (max-width: $mobileSmall) {
+            padding-right: rem(10);
+            padding-left: rem(10);
+        }
+    }
+
+    // .calculator__parameter
+    &__parameter {
+    }
+
+    // .calculator__bottom
+    &__bottom {
+        display: grid;
+        align-items: center;
+        gap: rem(48);
+
+        @media (min-width: $mobileSmall) {
+            gap: rem(20);
+            grid-template-columns: 1fr percent(466, 1050);
+        }
+    }
+
+    // .calculator__bottom-left
+    &__bottom-left {
+        display: grid;
+        gap: rem(32);
+
+        @media (min-width: $mobile) {
+            gap: rem(24);
+        }
+    }
+
+    // .calculator__tariff
+    &__tariff {
+    }
+
+    // .calculator__result
+    &__result {
+        background-color: $mainColor;
+        color: $White;
+        @include adaptiveValue("padding", 64, 24);
+        display: grid;
+        gap: rem(40);
+    }
+
+    // .calculator__total
+    &__total {
+    }
+
+    // .calculator__request
+    &__request {
+        .popup-link {
+            font-weight: 300;
+            @include adaptiveValue("font-size", 60, 30);
+            line-height: 1;
+
+            &::before {
+                @include adaptiveValue("font-size", 16, 9);
+            }
+        }
+    }
+}
+
+// steps ====================================================================================================
+.step {
+    display: grid;
+    @include adaptiveValue("gap", 80, 40, 1280, 768, 1);
+
+    @media (min-width: $mobileSmall) {
+        display: flex;
+        align-items: center;
+
+        &:nth-child(2n) {
+            flex-direction: row-reverse;
+        }
+    }
+    @media (max-width: $mobileSmall) {
+        text-align: center;
+    }
+
+    // .step__icon
+    &__icon {
+        @include adaptiveValue("max-width", 126, 70);
+
+        @media (min-width: $mobileSmall) {
+            flex-shrink: 0;
+            @include adaptiveValue("flex-basis", 126, 70);
+        }
+        @media (max-width: $mobileSmall) {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    // .step__text
+    &__text {
+        @media (min-width: $mobileSmall) {
+            max-width: rem(305);
+        }
+    }
+}
+
+.steps {
+    @include adaptiveValue("padding-top", 120, 56);
+    @include adaptiveValue("margin-bottom", 120, 56);
+
+    // .steps__container
+    &__container {
+    }
+
+    // .steps__title
+    &__title {
+        text-align: center;
+
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 120, 56);
+        }
+    }
+
+    // .steps__items
+    &__items {
+        display: grid;
+        @include adaptiveValue("row-gap", 120, 56);
+    }
+
+    // .steps__item
+    &__item {
+    }
+}
+
+// faq ====================================================================================================
+.faq {
+    @include adaptiveValue("padding-top", 120, 56);
+    @include adaptiveValue("margin-bottom", 120, 56);
+
+    // .faq__container
+    &__container {
+    }
+
+    // .faq__title
+    &__title {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 80, 56);
+        }
+        @media (max-width: $mobileSmall) {
+            text-align: center;
+        }
+    }
+
+    // .faq__spollers
+    &__spollers {
+    }
+}
+
+// solution ====================================================================================================
+.image-full {
+    display: flex;
+    flex-direction: column-reverse;
+    overflow: hidden;
+
+    @media (min-width: $tablet) {
+        flex-direction: row;
+    }
+
+    [class*="__container"] {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    // .image-full__content
+    &__content {
+        flex: 0 0 100%;
+        display: flex;
+    }
+
+    // .image-full__body
+    &__body {
+        @media (min-width: $tablet) {
+            width: 35%;
+        }
+    }
+
+    // .image-full__image
+    &__image {
+        @media (min-width: $tablet) {
+            position: relative;
+            flex: 0 0 calc(((100vw - rem(40)) * 0.65) + rem(20));
+            transform: translate(-100%, 0);
+        }
+
+        @media (min-width: em(1200)) {
+            flex: 0 0 calc(50vw - (0.35 - 0.5) * (rem(1200) - rem(40)));
+        }
+    }
+}
+
+.solution {
+    // .solution__container
+    &__container {
+    }
+
+    // .solution__body
+    &__body {
+        @include adaptiveValue("padding-top", 220, 58, 1280, 992, 1);
+        @include adaptiveValue("padding-bottom", 220, 58, 1280, 992, 1);
+    }
+
+    // .solution__title
+    &__title {
+        font-weight: 700;
+        @include adaptiveValue("font-size", 40, 28);
+        line-height: math.div(52, 40);
+
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 64, 32, 1280, 992, 1);
+        }
+    }
+
+    // .solution__text
+    &__text {
+        @include adaptiveValue("font-size", 20, 16);
+        line-height: math.div(30, 20);
+
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 100, 56, 1280, 992, 1);
+        }
+    }
+
+    // .solution__link
+    &__link {
+        display: inline-flex;
+
+        a {
+            font-weight: 300;
+            @include adaptiveValue("font-size", 40, 30);
+            line-height: math.div(52, 40);
+            gap: rem(20);
+
+            &::before {
+                font-size: rem(12);
+            }
+        }
+    }
+
+    // .solution__gallery
+    &__gallery {
+        display: grid;
+        align-items: end;
+        max-width: rem(930);
+        grid-template-columns: 1fr percent(402, 717);
+        @include adaptiveValue("gap", 100, 20);
+        gap: rem(100);
+        padding: rem(70) 0;
+        padding-left: rem(35);
+
+        @media (max-width: $mobile) {
+            padding: rem(20) 0;
+        }
+
+        :nth-child(2n) {
+            .solution__image-link {
+                &::before {
+                    font-size: rem(20);
+                }
+            }
+        }
+
+        :nth-child(3n) {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            border-radius: rem(40);
+            margin-left: percent(288, 895);
+
+            img {
+                border-radius: rem(40);
+            }
+
+            .solution__image-link {
+                &::before {
+                    font-size: rem(22);
+                }
+            }
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    // .solution__image
+    &__image {
+        width: 100%;
+        position: relative;
+        padding-bottom: percent(250, 402);
+        border-radius: rem(20);
+        transform: rotate(-16deg);
+
+        &[data-src] {
+            cursor: pointer;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: rem(20);
+            transition: 3s ease transform 0s;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                img {
+                    transition: 3s ease transform 0s;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    // .solution__image-link {
+    &__image-link {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 1;
+        transform: translate(-50%, -50%);
+        width: percent(68, 500);
+        padding-bottom: percent(68, 500);
+        border-radius: 50%;
+        background-color: $White;
+
+        &::before {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: rem(10);
+        }
+    }
+}

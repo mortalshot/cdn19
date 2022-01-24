@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Главная</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css?_v=20220124173943">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220124173943">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header compensate-for-scrollbar" data-scroll="120" data-scroll-show>
+			<div class="header__container">
+				<div class="logo">
+					<a href="" class="logo__link">
+						<div class="logo__text">CDN19</div>
+					</a>
+				</div>
+
+				<div class="header__right">
+					<nav class="language">
+						<ul class="language__menu">
+							<li class="language__switcher language__menu-item">
+								<a href="">EN</a>
+
+								<ul class="language__sub-menu">
+									<li class="language__menu-item"><a href="">RU</a></li>
+									<li class="language__menu-item"><a href="">FR</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+
+					<span class="header__division"></span>
+
+					<div class="header__contact">
+						<button data-fancybox="modal" data-src="#request" class="popup-link _icon-popup-link">Contact</button>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<section id="main" class="main">
+				<div class="main__container">
+					<div class="main__body">
+						<h1 class="main__title">Amsterdam - Premium PoP for volume video traffic</h1>
+					</div>
+
+					<div class="main__image"><picture><source srcset="img/main.webp" type="image/webp"><img src="img/main.png" alt="Amsterdam - Premium PoP for volume video traffic" loading="lazy"></picture></div>
+				</div>
+			</section>
+
+			<section id="calculator" class="calculator">
+				<div class="calculator__container">
+					<div class="calculator__top">
+						<h2 class="calculator__title">Saving calculator</h2>
+
+						<div class="calculator__parameters">
+							<div class="calculator__parameter parameter">
+								<div class="parameter__caption">Storage</div>
+								<div id="storageSlider" class="parameter__slider"></div>
+							</div>
+							<div class="calculator__parameter parameter">
+								<div class="parameter__caption">Traffic</div>
+								<div id="trafficSlider" class="parameter__slider"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="calculator__bottom">
+						<div class="calculator__bottom-left">
+							<div class="calculator__tariff tariff">
+								<div class="tariff__caption">Turbo Storage</div>
+								<div class="tariff__price">€ <span id="storagePrice">20</span> / Gb</div>
+							</div>
+							<div class="calculator__tariff tariff">
+								<div class="tariff__caption">Traffic</div>
+								<div class="tariff__price">€ <span id="trafficPrice">200</span> / Gb</div>
+							</div>
+						</div>
+
+						<div class="calculator__result">
+							<div class="calculator__total total-result">
+								<div class="total-result__caption">Total</div>
+								<div class="total-result__value">€ <span id="calculatorResult">400</span></div>
+							</div>
+
+							<div class="calculator__request"><a href="" class="popup-link _icon-popup-link">Order</a></div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="steps" class="steps">
+				<div class="steps__container">
+					<h2 class="steps__title">How it works</h2>
+
+					<div class="steps__items">
+						<div class="steps__item step">
+							<div class="step__icon"><img src="img/icons/step-1.svg" alt="Upload your video" loading="lazy"></div>
+							<div class="step__text _content">
+								<h3>Upload your video</h3>
+								<p>A small block with text to support the title, a better description of the block and more profitable visualization</p>
+							</div>
+						</div>
+						<div class="steps__item step">
+							<div class="step__icon"><img src="img/icons/step-2.svg" alt="Get a permanent link to the video" loading="lazy"></div>
+							<div class="step__text _content">
+								<h3>Get a permanent link to the video</h3>
+								<p>A small block with text to support the title, a better description of the block and more profitable visualization</p>
+							</div>
+						</div>
+						<div class="steps__item step">
+							<div class="step__icon"><img src="img/icons/step-3.svg" alt="Paste link in your player" loading="lazy"></div>
+							<div class="step__text _content">
+								<h3>Paste link in your player</h3>
+								<p>A small block with text to support the title, a better description of the block and more profitable visualization</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="faq" class="faq">
+				<div class="faq__container">
+					<h2 class="faq__title">FAQ</h2>
+
+					<div data-spollers class="faq__spollers spollers">
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">How to start?</button>
+							<div class="spollers__body _content">
+								<ol>
+									<li>Create a new zone and specify the amount of space you need. </li>
+									<li>Upload your files. </li>
+									<li>Once uploaded, the videos will be accessible via URL zones, keeping the structure of your folders. </li>
+								</ol>
+								<p>You can regularly add more space if required.</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">Do you offer hotlink protection settings?</button>
+							<div class="spollers__body _content">
+								<ol>
+									<li>Create a new zone and specify the amount of space you need. </li>
+									<li>Upload your files. </li>
+									<li>Once uploaded, the videos will be accessible via URL zones, keeping the structure of your folders. </li>
+								</ol>
+								<p>You can regularly add more space if required.</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">Where do you host yhe files? How are you different from an ordinary CDN?</button>
+							<div class="spollers__body _content">
+								<ol>
+									<li>Create a new zone and specify the amount of space you need. </li>
+									<li>Upload your files. </li>
+									<li>Once uploaded, the videos will be accessible via URL zones, keeping the structure of your folders. </li>
+								</ol>
+								<p>You can regularly add more space if required.</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">How do you treat DMCA complaints?</button>
+							<div class="spollers__body _content">
+								<ol>
+									<li>Create a new zone and specify the amount of space you need. </li>
+									<li>Upload your files. </li>
+									<li>Once uploaded, the videos will be accessible via URL zones, keeping the structure of your folders. </li>
+								</ol>
+								<p>You can regularly add more space if required.</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">Do you supports KVS (Kernel video sharing)?</button>
+							<div class="spollers__body _content">
+								<ol>
+									<li>Create a new zone and specify the amount of space you need. </li>
+									<li>Upload your files. </li>
+									<li>Once uploaded, the videos will be accessible via URL zones, keeping the structure of your folders. </li>
+								</ol>
+								<p>You can regularly add more space if required.</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">What is the payment pricedure?</button>
+							<div class="spollers__body _content">
+								<ol>
+									<li>Create a new zone and specify the amount of space you need. </li>
+									<li>Upload your files. </li>
+									<li>Once uploaded, the videos will be accessible via URL zones, keeping the structure of your folders. </li>
+								</ol>
+								<p>You can regularly add more space if required.</p>
+							</div>
+						</div>
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">How to start?</button>
+							<div class="spollers__body _content">
+								<ol>
+									<li>Create a new zone and specify the amount of space you need. </li>
+									<li>Upload your files. </li>
+									<li>Once uploaded, the videos will be accessible via URL zones, keeping the structure of your folders. </li>
+								</ol>
+								<p>You can regularly add more space if required.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="solution" class="solution image-full">
+				<div class="image-full__content">
+					<div class="solution__container">
+						<div class="solution__body image-full__body">
+							<h2 class="solution__title">Trusted solution for video site owners</h2>
+							<div class="solution__text _content">
+								<p>A small block with text to support the title, a better description of the block and more profitable visualization</p>
+							</div>
+							<div class="solution__link"><a href="" class="popup-link _icon-popup-link">Contact</a></div>
+							<!-- content -->
+						</div>
+					</div>
+				</div>
+				<div class="image-full__image">
+					<div class="solution__gallery">
+						<div class="solution__item">
+							<a data-fancybox="video-gallery" data-src="https://youtu.be/3ngjmr31F0I" class="solution__image solution__image_video">
+								<div class="solution__image-link _icon-play"></div>
+								<picture><source srcset="img/solution/solution-1.webp" type="image/webp"><img src="img/solution/solution-1.jpg" alt="" loading="lazy"></picture>
+							</a>
+						</div>
+						<div class="solution__item">
+							<a data-fancybox="video-gallery" data-src="https://youtu.be/L9kbdSaOvDk" class="solution__image solution__image_video">
+								<div class="solution__image-link _icon-play"></div>
+								<picture><source srcset="img/solution/solution-2.webp" type="image/webp"><img src="img/solution/solution-2.jpg" alt="" loading="lazy"></picture>
+							</a>
+						</div>
+						<div class="solution__item">
+							<a data-fancybox="video-gallery" data-src="https://youtu.be/L9kbdSaOvDk" class="solution__image solution__image_video">
+								<div class="solution__image-link _icon-play"></div>
+								<picture><source srcset="img/solution/solution-3.webp" type="image/webp"><img src="img/solution/solution-3.jpg" alt="" loading="lazy"></picture>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__copyright">© 2019 CDN19.COM</div>
+
+				<div class="footer__kan"><a href="" class="_icon-kan1" target="_blank"></a></div>
+			</div>
+		</footer>
+	</div>
+	<!-- 
+<div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">Закрыть</button>
+			<div class="popup__text">
+			</div>
+		</div>
+	</div>
+</div>
+ -->
+
+	<div id="request" class="popup" style="display: none;">
+		<div class="popup__wrapper">
+			<div class="popup__title">Contact Us</div>
+
+			<form action="" class="form">
+				<div class="form__row">
+					<div class="form-group">
+						<label for="your-name" class="form__label">Name</label>
+						<input type="text" name="your-name" class="input" id="your-name" placeholder="Your name">
+					</div>
+					<div class="form-group">
+						<label for="your-phone" class="form__label">Phone</label>
+						<input type="text" name="your-phone" class="input" id="your-phone" placeholder="Your phone">
+					</div>
+					<div class="form-group">
+						<label for="your-mail" class="form__label">Mail</label>
+						<input type="email" name="your-mail" class="input" id="your-mail" placeholder="Your mail">
+					</div>
+				</div>
+
+				<button type="submit" class="form__button _icon-popup-link">Contact</button>
+			</form>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js?_v=20220124173943"></script>
+	<script src="js/app.min.js?_v=20220124173943"></script>
+</body>
+
+</html>

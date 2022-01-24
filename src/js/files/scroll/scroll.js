@@ -75,6 +75,8 @@ export function headerScroll() {
 	const headerShow = header.hasAttribute('data-scroll-show');
 	const headerShowTimer = header.dataset.scrollShow ? header.dataset.scrollShow : 500;
 	const startPoint = header.dataset.scroll ? header.dataset.scroll : 1;
+	const main = document.querySelector('.page');
+	const headerOffset = header.offsetHeight + 'px';
 	let scrollDirection = 0;
 	let timer;
 	document.addEventListener("windowScroll", function (e) {
@@ -82,6 +84,7 @@ export function headerScroll() {
 		clearTimeout(timer);
 		if (scrollTop >= startPoint) {
 			!header.classList.contains('_header-scroll') ? header.classList.add('_header-scroll') : null;
+			main.style.paddingTop = headerOffset;
 			if (headerShow) {
 				if (scrollTop > scrollDirection) {
 					// downscroll code
@@ -96,6 +99,7 @@ export function headerScroll() {
 			}
 		} else {
 			header.classList.contains('_header-scroll') ? header.classList.remove('_header-scroll') : null;
+			main.style.paddingTop = 0;
 			if (headerShow) {
 				header.classList.contains('_header-show') ? header.classList.remove('_header-show') : null;
 			}

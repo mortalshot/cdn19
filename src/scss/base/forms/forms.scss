@@ -2,16 +2,49 @@
 // Снипет (HTML):
 .form {
 	&__row {
+		display: grid;
+		@include adaptiveValue("gap", 24, 16);
 	}
-	&__column {
+
+	&__label {
+		font-size: rem(12);
+		line-height: math.div(16, 12);
+		color: $Grey2;
 	}
-	&__line {
-	}
+
 	&__input {
 	}
+
 	&__button {
-	}
-	&__error {
+		&._icon-popup-link {
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: center;
+			gap: rem(20);
+			@include adaptiveValue("font-size", 40, 30);
+			line-height: math.div(52, 40);
+			gap: rem(20);
+			transition: $transition ease opacity 0s;
+
+			&::before {
+				font-size: rem(12);
+				transition: $transition ease transform 0s;
+			}
+
+			@media (any-hover: hover) {
+				&:hover {
+					opacity: 0.5;
+
+					&::before {
+						transform: translate(rem(5));
+					}
+				}
+			}
+		}
+
+		&:not(:first-child) {
+			@include adaptiveValue("margin-top", 48, 32);
+		}
 	}
 }
 //</FORM>
@@ -22,7 +55,7 @@
 
 // <INPUTS>
 // Снипет (HTML): inp
-// @import "input";
+@import "input";
 
 // <CHECK>
 // Снипет (HTML): chk
@@ -46,4 +79,4 @@
 
 // <RANGE>
 // Снипет (HTML):
-// @import "range";
+@import "range";

@@ -14,3 +14,16 @@
 		display: block;
 	}
 }
+
+._icon-play:before {
+	content: "\e901";
+}
+._icon-plus:before {
+	content: "\e902";
+}
+._icon-popup-link:before {
+	content: "\e903";
+}
+._icon-kan1:before {
+	content: "\e904";
+}

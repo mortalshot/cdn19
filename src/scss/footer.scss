@@ -1,3 +1,33 @@
-//====================================================================================================
+// footer ====================================================================================================
+.footer {
+    @include adaptiveValue("padding-top", 48, 24);
+    @include adaptiveValue("padding-bottom", 48, 24);
+    color: $Grey2;
 
-//====================================================================================================
+    // .footer__container
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: rem(20);
+    }
+
+    // .footer__copyright
+    &__copyright {
+        @include adaptiveValue("font-size", 14, 10);
+        line-height: math.div(17, 14);
+    }
+
+    // .footer__kan
+    &__kan {
+        @include adaptiveValue("font-size", 24, 17);
+
+        @media (any-hover: hover) {
+            transition: $transition ease opacity 0s;
+
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+}

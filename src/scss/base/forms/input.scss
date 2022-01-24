@@ -12,14 +12,27 @@ textarea {
 	border-radius: 0 !important;
 	width: 100%;
 	display: block;
-	padding: 0px 20px;
-	border: 1px solid #eee;
-	&._focus {
+	padding: rem(8) 0;
+	border-bottom: 1px solid $LGrey;
+	background-color: transparent;
+	@include adaptiveValue("font-size", 18, 14);
+	line-height: math.div(23, 18);
+	transition: $transition ease border-color 0s;
+
+	&::placeholder {
+		transition: 0.5s ease all 0s;
 	}
-	&._error {
+
+	&:focus {
+		outline: none !important;
+		border-color: $mainColor;
+
+		&::placeholder {
+			opacity: 0;
+		}
 	}
 }
 textarea.input {
 	resize: none;
-	padding: 0px 0px;
+	padding: rem(8) 0;
 }
