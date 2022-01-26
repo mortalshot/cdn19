@@ -32,9 +32,9 @@ img {
 
     // .logo__text
     &__text {
-        @include adaptiveValue("min-height", 40, 21);
+        @include adaptiveValue("min-height", 40, 25);
         font-weight: 900;
-        @include adaptiveValue("font-size", 20, 11);
+        @include adaptiveValue("font-size", 20, 12);
         line-height: percent(26, 20);
         color: $White;
         background-color: $mainColor;

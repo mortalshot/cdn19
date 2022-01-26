@@ -51,13 +51,22 @@ export function rangeInit() {
 	}
 
 	storageSlider.noUiSlider.on('update', function (values) {
-		console.log(Number(values));
 		if (trafficSlider) {
 			let trafficSliderValue = trafficSlider.noUiSlider.get();
 
 			result.innerHTML = (Number(values * storagePrice.innerHTML + trafficSliderValue * trafficPrice.innerHTML)).toFixed(2);
+
+			if (Number(values) >= 10) {
+				document.querySelector('.total-result').classList.add('_request');
+			} else if (trafficSliderValue < 10) {
+				document.querySelector('.total-result').classList.remove('_request');
+			}
 		} else {
 			result.innerHTML = (values * storagePrice.innerHTML).toFixed(2);
+
+			if (Number(values) >= 10) {
+				document.querySelector('.total-result').classList.add('_request');
+			}
 		}
 	})
 
@@ -66,8 +75,18 @@ export function rangeInit() {
 			let storageSliderValue = storageSlider.noUiSlider.get();
 
 			result.innerHTML = (Number(values * trafficPrice.innerHTML + storageSliderValue * storagePrice.innerHTML)).toFixed(2);
+
+			if (Number(values) >= 10) {
+				document.querySelector('.total-result').classList.add('_request');
+			} else if (storageSliderValue < 10) {
+				document.querySelector('.total-result').classList.remove('_request');
+			}
 		} else {
 			result.innerHTML = (values * trafficPrice.innerHTML).toFixed(2);
+
+			if (Number(values) >= 10) {
+				document.querySelector('.total-result').classList.add('_request');
+			}
 		}
 	})
 }

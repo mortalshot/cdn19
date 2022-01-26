@@ -1774,17 +1774,24 @@
                 }) ]
             });
             storageSlider.noUiSlider.on("update", (function(values) {
-                console.log(Number(values));
                 if (trafficSlider) {
                     let trafficSliderValue = trafficSlider.noUiSlider.get();
                     result.innerHTML = Number(values * storagePrice.innerHTML + trafficSliderValue * trafficPrice.innerHTML).toFixed(2);
-                } else result.innerHTML = (values * storagePrice.innerHTML).toFixed(2);
+                    if (Number(values) >= 10) document.querySelector(".total-result").classList.add("_request"); else if (trafficSliderValue < 10) document.querySelector(".total-result").classList.remove("_request");
+                } else {
+                    result.innerHTML = (values * storagePrice.innerHTML).toFixed(2);
+                    if (Number(values) >= 10) document.querySelector(".total-result").classList.add("_request");
+                }
             }));
             trafficSlider.noUiSlider.on("update", (function(values) {
                 if (storageSlider) {
                     let storageSliderValue = storageSlider.noUiSlider.get();
                     result.innerHTML = Number(values * trafficPrice.innerHTML + storageSliderValue * storagePrice.innerHTML).toFixed(2);
-                } else result.innerHTML = (values * trafficPrice.innerHTML).toFixed(2);
+                    if (Number(values) >= 10) document.querySelector(".total-result").classList.add("_request"); else if (storageSliderValue < 10) document.querySelector(".total-result").classList.remove("_request");
+                } else {
+                    result.innerHTML = (values * trafficPrice.innerHTML).toFixed(2);
+                    if (Number(values) >= 10) document.querySelector(".total-result").classList.add("_request");
+                }
             }));
         }
         rangeInit();
@@ -1804,6 +1811,7 @@
                 clearTimeout(timer);
                 if (scrollTop >= startPoint) {
                     !header.classList.contains("_header-scroll") ? header.classList.add("_header-scroll") : null;
+                    header.classList.add("compensate-for-scrollbar");
                     main.style.paddingTop = headerOffset;
                     if (headerShow) {
                         if (scrollTop > scrollDirection) header.classList.contains("_header-show") ? header.classList.remove("_header-show") : null; else !header.classList.contains("_header-show") ? header.classList.add("_header-show") : null;
@@ -1813,6 +1821,7 @@
                     }
                 } else {
                     header.classList.contains("_header-scroll") ? header.classList.remove("_header-scroll") : null;
+                    header.classList.remove("compensate-for-scrollbar");
                     main.style.paddingTop = 0;
                     if (headerShow) header.classList.contains("_header-show") ? header.classList.remove("_header-show") : null;
                 }

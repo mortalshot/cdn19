@@ -15,6 +15,12 @@
 	}
 }
 
+._icon-skype:before {
+	content: "\e900";
+}
+._icon-telegram:before {
+	content: "\e905";
+}
 ._icon-play:before {
 	content: "\e901";
 }

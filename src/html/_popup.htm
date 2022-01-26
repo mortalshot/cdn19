@@ -1,15 +1,3 @@
-<!-- 
-<div id="popup" aria-hidden="true" class="popup">
-	<div class="popup__wrapper">
-		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрыть</button>
-			<div class="popup__text">
-			</div>
-		</div>
-	</div>
-</div>
- -->
-
 <div id="request" class="popup" style="display: none;">
 	<div class="popup__wrapper">
 		<div class="popup__title">Contact Us</div>
@@ -31,6 +19,38 @@
 			</div>
 
 			<button type="submit" class="form__button _icon-popup-link">Contact</button>
+		</form>
+	</div>
+</div>
+<div id="sign-up" class="popup popup_sign" style="display: none;">
+	<div class="popup__wrapper">
+		<div class="popup__title">Сontact type</div>
+
+		<form action="" class="form">
+			<div class="form__row">
+				<div class="options">
+					<div class="options__item">
+						<input hidden id="telegram" class="options__input" checked type="radio" value="telegram" name="option">
+						<label for="telegram" class="options__label"><span class="options__text _icon-telegram">Telegram</span></label>
+					</div>
+					<div class="options__item">
+						<input hidden id="skype" class="options__input" type="radio" value="skype" name="option">
+						<label for="skype" class="options__label"><span class="options__text _icon-skype">Skype</span></label>
+					</div>
+				</div>
+			</div>
+			<div class="form__row">
+				<div class="form-group">
+					<label for="sign-your-mail" class="form__label">Mail</label>
+					<input type="email" name="sign-your-mail" class="input" id="sign-your-mail" placeholder="Your mail">
+				</div>
+				<div class="form-group">
+					<label for="sign-your-contact" class="form__label">Contact</label>
+					<input type="text" name="sign-your-contact" class="input" id="sign-your-contact" placeholder="Your contact">
+				</div>
+			</div>
+
+			<button type="submit" class="form__button _icon-popup-link">Sign Up</button>
 		</form>
 	</div>
 </div>

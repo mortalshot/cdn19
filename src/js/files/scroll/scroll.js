@@ -84,6 +84,7 @@ export function headerScroll() {
 		clearTimeout(timer);
 		if (scrollTop >= startPoint) {
 			!header.classList.contains('_header-scroll') ? header.classList.add('_header-scroll') : null;
+			header.classList.add('compensate-for-scrollbar');
 			main.style.paddingTop = headerOffset;
 			if (headerShow) {
 				if (scrollTop > scrollDirection) {
@@ -99,6 +100,7 @@ export function headerScroll() {
 			}
 		} else {
 			header.classList.contains('_header-scroll') ? header.classList.remove('_header-scroll') : null;
+			header.classList.remove('compensate-for-scrollbar');
 			main.style.paddingTop = 0;
 			if (headerShow) {
 				header.classList.contains('_header-show') ? header.classList.remove('_header-show') : null;

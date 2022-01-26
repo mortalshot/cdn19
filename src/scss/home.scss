@@ -102,9 +102,74 @@
 
     // .total-result__value
     &__value {
+        display: flex;
+        position: relative;
+        overflow: hidden;
+    }
+
+    // .total-result__placeholder-request
+    &__placeholder-request {
         font-weight: 700;
-        @include adaptiveValue("font-size", 60, 30);
+        @include adaptiveValue("font-size", 34, 20, 1280, 768, 1);
         line-height: 1;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    // .total-result__placeholder-result
+    &__placeholder-result {
+        font-weight: 700;
+        @include adaptiveValue("font-size", 60, 30, 1280, 768, 1);
+        line-height: 1;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    // .total-result__text
+    &__text {
+        font-weight: 700;
+        @include adaptiveValue("font-size", 60, 30, 1280, 768, 1);
+        line-height: 1;
+        position: absolute;
+        transition: $transition ease transform 0s;
+    }
+
+    // .total-result__request
+    &__request {
+        font-weight: 700;
+        @include adaptiveValue("font-size", 34, 20, 1280, 768, 1);
+        line-height: 1;
+        text-align: left;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        position: absolute;
+        transform: translateY(100%);
+        transition: $transition ease all 0s;
+
+        &:link {
+            text-decoration: underline $White from-font;
+            text-underline-offset: 3px;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    text-decoration: underline transparent from-font;
+                }
+            }
+        }
+    }
+
+    &._request {
+        .total-result__text {
+            transform: translateY(-100%);
+        }
+
+        .total-result__request {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+        }
     }
 }
 
@@ -133,7 +198,7 @@
         }
 
         &:not(:last-child) {
-            @include adaptiveValue("margin-bottom", 120, 48);
+            @include adaptiveValue("margin-bottom", 120, 48, 1280, 768, 1);
         }
     }
 
@@ -165,9 +230,9 @@
         align-items: center;
         gap: rem(48);
 
-        @media (min-width: $mobileSmall) {
+        @media (min-width: $mobile) {
             gap: rem(20);
-            grid-template-columns: 1fr percent(466, 1050);
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
@@ -179,6 +244,9 @@
         @media (min-width: $mobile) {
             gap: rem(24);
         }
+        @media (max-width:$mobile){
+            grid-row-start: 2; 
+       }
     }
 
     // .calculator__tariff
@@ -192,6 +260,10 @@
         @include adaptiveValue("padding", 64, 24);
         display: grid;
         gap: rem(40);
+
+        @media (max-width:$mobile){
+             grid-row-start: 1; 
+        }
     }
 
     // .calculator__total
@@ -202,11 +274,12 @@
     &__request {
         .popup-link {
             font-weight: 300;
-            @include adaptiveValue("font-size", 60, 30);
+            @include adaptiveValue("font-size", 40, 30, 1280, 768, 1);
             line-height: 1;
+            text-align: left;
 
             &::before {
-                @include adaptiveValue("font-size", 16, 9);
+                @include adaptiveValue("font-size", 16, 9, 1280, 768, 1);
             }
         }
     }
