@@ -128,7 +128,7 @@
     // .total-result__text
     &__text {
         font-weight: 700;
-        @include adaptiveValue("font-size", 60, 30, 1280, 768, 1);
+        @include adaptiveValue("font-size", 60, 40, 1280, 768, 1);
         line-height: 1;
         position: absolute;
         transition: $transition ease transform 0s;
@@ -455,7 +455,7 @@
     &__link {
         display: inline-flex;
 
-        a {
+        .popup-link {
             font-weight: 300;
             @include adaptiveValue("font-size", 40, 30);
             line-height: math.div(52, 40);
@@ -485,7 +485,7 @@
         :nth-child(2n) {
             .solution__image-link {
                 &::before {
-                    font-size: rem(20);
+                    @include adaptiveValue("font-size", 20, 10);
                 }
             }
         }
@@ -502,7 +502,7 @@
 
             .solution__image-link {
                 &::before {
-                    font-size: rem(22);
+                    @include adaptiveValue("font-size", 22, 12);
                 }
             }
         }
@@ -564,7 +564,7 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            font-size: rem(10);
+            @include adaptiveValue("font-size", 10, 8);
         }
     }
 }

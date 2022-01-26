@@ -104,6 +104,9 @@
 		display: flex;
 
 		.popup-link {
+			@include adaptiveValue("font-size", 20, 14);
+			line-height: math.div(26, 20);
+			
 			&::before {
 				@include adaptiveValue("font-size", 7, 5);
 			}

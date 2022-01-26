@@ -49,8 +49,6 @@ img {
     align-items: center;
     flex-direction: row-reverse;
     justify-content: flex-end;
-    @include adaptiveValue("font-size", 20, 14);
-    line-height: math.div(26, 20);
     @include adaptiveValue("gap", 12, 8);
     transition: $transition ease opacity 0s;
 
@@ -135,5 +133,9 @@ img {
 
     &__backdrop {
         background: rgba(59, 59, 61, 0.6);
+    }
+
+    &__slide {
+        padding: 0 rem(20);
     }
 }

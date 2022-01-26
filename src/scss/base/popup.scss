@@ -54,6 +54,8 @@
 			@include adaptiveValue("gap", 48, 24);
 
 			&__button {
+				@include adaptiveValue("font-size", 30, 24);
+				
 				&:not(:first-child) {
 					margin-top: 0;
 				}

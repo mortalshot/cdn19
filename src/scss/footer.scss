@@ -12,10 +12,38 @@
         gap: rem(20);
     }
 
+    // .footer__left
+    &__left {
+        display: flex;
+        align-items: center;
+        @include adaptiveValue("gap", 120, 30);
+    }
+
     // .footer__copyright
     &__copyright {
         @include adaptiveValue("font-size", 14, 10);
         line-height: math.div(17, 14);
+    }
+
+    // .footer__menu
+    &__menu {
+        li {
+            display: flex;
+        }
+
+        a {
+            @include adaptiveValue("font-size", 14, 10);
+            line-height: math.div(17, 14);
+            text-decoration: underline $Grey2 from-font;
+            text-underline-offset: 1px;
+            transition: $transition ease text-decoration 0s;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    text-decoration: underline transparent from-font;
+                }
+            }
+        }
     }
 
     // .footer__kan
