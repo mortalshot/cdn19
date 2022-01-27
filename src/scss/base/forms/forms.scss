@@ -24,12 +24,12 @@
 			gap: rem(20);
 			@include adaptiveValue("font-size", 40, 30);
 			line-height: math.div(52, 40);
-			gap: rem(20);
 			transition: $transition ease opacity 0s;
 
 			&::before {
 				font-size: rem(12);
 				transition: $transition ease transform 0s;
+				margin-left: rem(20);
 			}
 
 			@media (any-hover: hover) {

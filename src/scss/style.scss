@@ -72,6 +72,13 @@ body {
 	flex-direction: column;
 	overflow: hidden;
 	background-color: $Grey;
+	opacity: 0;
+
+	.loaded & {
+		transition: 0.5s ease opacity 0.2s;
+		opacity: 1;
+	}
+
 	// Прижимаем footer
 	> main {
 		flex: 1 1 auto;

@@ -2,10 +2,7 @@
 .main {
     @include adaptiveValue("padding-top", 120, 56);
     @include adaptiveValue("margin-bottom", 120, 56);
-
-    @media (max-width: $mobileSmall) {
-        overflow: hidden;
-    }
+    overflow: hidden;
 
     // .main__container
     &__container {
@@ -31,6 +28,16 @@
 
     // .main__title
     &__title {
+        @media (min-width: $tablet) {
+            opacity: 0;
+            transform: translateY(100%);
+
+            .loaded & {
+                opacity: 1;
+                transform: translateY(0);
+                transition: 0.5s ease all 0.2s;
+            }
+        }
     }
 
     // .main__image
@@ -38,11 +45,62 @@
         max-width: rem(981);
         margin-left: auto;
         margin-right: auto;
+        position: relative;
 
+        @media (min-width: $tablet) {
+            transform: translateY(100%);
+            opacity: 0;
+
+            .loaded & {
+                transform: translateY(0);
+                opacity: 1;
+                transition: 0.5s ease all 0.5s;
+            }
+        }
         @media (max-width: $mobileSmall) {
             margin-left: rem(-20);
             margin-right: rem(-20);
             transform: scale(1.6);
+        }
+
+        svg {
+            position: absolute;
+            top: rem(15);
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 100%;
+            height: auto;
+        }
+
+        #main-pin {
+            animation: translateY 1s ease infinite;
+
+            @media (min-width: $tablet) {
+                opacity: 0;
+
+                .loaded & {
+                    transition: $transition ease all 1s;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__lines {
+        @media (min-width: $tablet) {
+            opacity: 0;
+            transform: scaleY(0);
+
+            .loaded & {
+                opacity: 1;
+                transform: scaleY(1);
+
+                @for $i from 1 through 10 {
+                    &:nth-child(#{$i}) {
+                        transition: $transition ease all #{$i * 0.3 + 1}s;
+                    }
+                }
+            }
         }
     }
 }
@@ -119,7 +177,7 @@
     // .total-result__placeholder-result
     &__placeholder-result {
         font-weight: 700;
-        @include adaptiveValue("font-size", 60, 30, 1280, 768, 1);
+        @include adaptiveValue("font-size", 60, 40, 1280, 768, 1);
         line-height: 1;
         opacity: 0;
         pointer-events: none;
@@ -212,11 +270,11 @@
         gap: rem(40);
 
         @media (max-width: $mobile) {
-            padding-right: rem(60);
+            padding-right: rem(40);
         }
         @media (max-width: $mobileSmall) {
-            padding-right: rem(10);
-            padding-left: rem(10);
+            padding-right: rem(30);
+            padding-left: rem(20);
         }
     }
 
@@ -244,9 +302,9 @@
         @media (min-width: $mobile) {
             gap: rem(24);
         }
-        @media (max-width:$mobile){
-            grid-row-start: 2; 
-       }
+        @media (max-width: $mobile) {
+            grid-row-start: 2;
+        }
     }
 
     // .calculator__tariff
@@ -261,8 +319,8 @@
         display: grid;
         gap: rem(40);
 
-        @media (max-width:$mobile){
-             grid-row-start: 1; 
+        @media (max-width: $mobile) {
+            grid-row-start: 1;
         }
     }
 
@@ -291,11 +349,17 @@
     @include adaptiveValue("gap", 80, 40, 1280, 768, 1);
 
     @media (min-width: $mobileSmall) {
-        display: flex;
+        grid-template-columns: rem(126) 1fr;
         align-items: center;
+        grid-template-areas: "icon text";
 
         &:nth-child(2n) {
-            flex-direction: row-reverse;
+            grid-template-areas: "text icon";
+            grid-template-columns: 1fr rem(126);
+
+            .step__text {
+                margin-left: auto;
+            }
         }
     }
     @media (max-width: $mobileSmall) {
@@ -307,8 +371,7 @@
         @include adaptiveValue("max-width", 126, 70);
 
         @media (min-width: $mobileSmall) {
-            flex-shrink: 0;
-            @include adaptiveValue("flex-basis", 126, 70);
+            grid-area: icon;
         }
         @media (max-width: $mobileSmall) {
             margin-left: auto;
@@ -319,6 +382,7 @@
     // .step__text
     &__text {
         @media (min-width: $mobileSmall) {
+            grid-area: text;
             max-width: rem(305);
         }
     }
@@ -459,10 +523,10 @@
             font-weight: 300;
             @include adaptiveValue("font-size", 40, 30);
             line-height: math.div(52, 40);
-            gap: rem(20);
 
             &::before {
                 font-size: rem(12);
+                margin-left: rem(20);
             }
         }
     }
@@ -479,7 +543,10 @@
         padding-left: rem(35);
 
         @media (max-width: $mobile) {
-            padding: rem(20) 0;
+            padding: rem(50) 0;
+        }
+        @media (max-width: $mobileSmall) {
+            padding: rem(35) 0;
         }
 
         :nth-child(2n) {

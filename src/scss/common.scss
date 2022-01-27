@@ -24,6 +24,8 @@ img {
 }
 
 .logo {
+    display: flex;
+
     // .logo__link
     &__link {
         display: inline-flex;
@@ -42,6 +44,12 @@ img {
         align-items: center;
         padding: rem(5) rem(14);
     }
+
+    // .logo__img
+    &__img {
+        display: flex;
+        @include adaptiveValue("max-width", 100, 62);
+    }
 }
 
 .popup-link {
@@ -49,12 +57,12 @@ img {
     align-items: center;
     flex-direction: row-reverse;
     justify-content: flex-end;
-    @include adaptiveValue("gap", 12, 8);
     transition: $transition ease opacity 0s;
 
     &::before {
         transition: $transition ease transform 0s;
         font-size: rem(8);
+        @include adaptiveValue("margin-left", 12, 8);
     }
 
     @media (any-hover: hover) {
@@ -119,6 +127,19 @@ img {
     }
 }
 
+// Анимация ====================================================================================================
+@keyframes translateY {
+    0% {
+        transform: translateY(rem(0));
+    }
+    50% {
+        transform: translateY(rem(-7));
+    }
+    100% {
+        transform: translateY(rem(0));
+    }
+}
+
 // noUISlider ====================================================================================================
 .noUi-tooltip {
     @include adaptiveValue("font-size", 30, 20);
@@ -129,6 +150,7 @@ img {
 .fancybox {
     &__container {
         max-width: 100%;
+        padding: 0 rem(40);
     }
 
     &__backdrop {

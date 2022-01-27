@@ -127,7 +127,7 @@
 	height: 20px;
 	border-radius: 50%;
 	border: 4px solid #2f2f3d;
-	cursor: default;
+	cursor: pointer;
 }
 .noUi-active {
 	box-shadow: inset 0 0 1px #fff, inset 0 1px 7px #ddd, 0 3px 6px -3px #bbb;
@@ -237,7 +237,7 @@
 .noUi-tooltip {
 	display: block;
 	position: absolute;
-	color: #2F2F3D;
+	color: #2f2f3d;
 	text-align: center;
 	white-space: nowrap;
 }

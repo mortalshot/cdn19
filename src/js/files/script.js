@@ -17,3 +17,8 @@ function documentActions(e) {
     }
     // Показ выпадающего меню с языками
 }
+
+
+Fancybox.bind("[data-fancybox]", {
+    autoFocus: false
+});

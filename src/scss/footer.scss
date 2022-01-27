@@ -14,7 +14,7 @@
 
     // .footer__left
     &__left {
-        display: flex;
+        display: grid;
         align-items: center;
         @include adaptiveValue("gap", 120, 30);
     }

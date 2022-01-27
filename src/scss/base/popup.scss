@@ -101,12 +101,16 @@
 					display: flex;
 					align-items: center;
 					justify-content: center;
-					gap: rem(8);
 					font-weight: 500;
 					font-size: rem(16);
-					line-height: math.div(21, 16);
+					line-height: 1;
 					color: $Grey2;
 					transition: $transition ease color 0s;
+
+					&::before {
+						margin-right: rem(8);
+						font-size: rem(18);
+					}
 				}
 			}
 
