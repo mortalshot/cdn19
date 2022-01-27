@@ -16,15 +16,15 @@
 @font-face {
   font-family: HelveticaNeueCyr;
   font-display: swap;
-  src: url("../fonts/HelveticaNeueCyr-Light.woff2") format("woff2"), url("../fonts/HelveticaNeueCyr-Light.woff") format("woff");
-  font-weight: 300;
+  src: url("../fonts/HelveticaNeueCyr-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeueCyr-Medium.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: HelveticaNeueCyr;
   font-display: swap;
-  src: url("../fonts/HelveticaNeueCyr-Medium.woff2") format("woff2"), url("../fonts/HelveticaNeueCyr-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/HelveticaNeueCyr-Light.woff2") format("woff2"), url("../fonts/HelveticaNeueCyr-Light.woff") format("woff");
+  font-weight: 300;
   font-style: normal;
 }
 @font-face {
@@ -1242,24 +1242,24 @@ img {
 }
 @media (min-width: 77.5em) {
   .logo__img {
-    max-width: 6.25rem;
+    max-width: 7.375rem;
   }
 }
 @media (min-width: 20em) and (max-width: 77.5em) {
-  @supports (max-width: clamp( 3.875rem , 3.0489130435rem  +  4.1304347826vw , 6.25rem )) {
+  @supports (max-width: clamp( 5rem , 4.1739130435rem  +  4.1304347826vw , 7.375rem )) {
     .logo__img {
-      max-width: clamp( 3.875rem , 3.0489130435rem  +  4.1304347826vw , 6.25rem );
+      max-width: clamp( 5rem , 4.1739130435rem  +  4.1304347826vw , 7.375rem );
     }
   }
-  @supports not (max-width: clamp( 3.875rem , 3.0489130435rem  +  4.1304347826vw , 6.25rem )) {
+  @supports not (max-width: clamp( 5rem , 4.1739130435rem  +  4.1304347826vw , 7.375rem )) {
     .logo__img {
-      max-width: calc(3.875rem + 2.375 * (100vw - 20rem) / 57.5);
+      max-width: calc(5rem + 2.375 * (100vw - 20rem) / 57.5);
     }
   }
 }
 @media (max-width: 20em) {
   .logo__img {
-    max-width: 3.875rem;
+    max-width: 5rem;
   }
 }
 

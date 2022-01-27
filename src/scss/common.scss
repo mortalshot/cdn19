@@ -48,7 +48,7 @@ img {
     // .logo__img
     &__img {
         display: flex;
-        @include adaptiveValue("max-width", 100, 62);
+        @include adaptiveValue("max-width", 118, 80);
     }
 }
 
