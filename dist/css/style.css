@@ -1938,6 +1938,28 @@ img {
     transform: scale(1.6);
   }
 }
+@media (max-width: 29.99875em) and (min-width: 30em) {
+  .main__image {
+    padding-bottom: 2.5625rem;
+  }
+}
+@media (max-width: 29.99875em) and (min-width: 20em) and (max-width: 30em) {
+  @supports (padding-bottom: clamp( 1.75rem , 0.125rem  +  8.125vw , 2.5625rem )) {
+    .main__image {
+      padding-bottom: clamp( 1.75rem , 0.125rem  +  8.125vw , 2.5625rem );
+    }
+  }
+  @supports not (padding-bottom: clamp( 1.75rem , 0.125rem  +  8.125vw , 2.5625rem )) {
+    .main__image {
+      padding-bottom: calc(1.75rem + 0.8125 * (100vw - 20rem) / 10);
+    }
+  }
+}
+@media (max-width: 29.99875em) and (max-width: 20em) {
+  .main__image {
+    padding-bottom: 1.75rem;
+  }
+}
 .main__image svg {
   position: absolute;
   left: 52.5%;
