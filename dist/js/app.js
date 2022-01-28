@@ -1803,38 +1803,6 @@
         }
         rangeInit();
         let addWindowScrollEvent = false;
-        function headerScroll() {
-            addWindowScrollEvent = true;
-            const header = document.querySelector("header.header");
-            const headerShow = header.hasAttribute("data-scroll-show");
-            const headerShowTimer = header.dataset.scrollShow ? header.dataset.scrollShow : 500;
-            const startPoint = header.dataset.scroll ? header.dataset.scroll : 1;
-            const main = document.querySelector(".page");
-            const headerOffset = header.offsetHeight + "px";
-            let scrollDirection = 0;
-            let timer;
-            document.addEventListener("windowScroll", (function(e) {
-                const scrollTop = window.scrollY;
-                clearTimeout(timer);
-                if (scrollTop >= startPoint) {
-                    !header.classList.contains("_header-scroll") ? header.classList.add("_header-scroll") : null;
-                    header.classList.add("compensate-for-scrollbar");
-                    main.style.paddingTop = headerOffset;
-                    if (headerShow) {
-                        if (scrollTop > scrollDirection) header.classList.contains("_header-show") ? header.classList.remove("_header-show") : null; else !header.classList.contains("_header-show") ? header.classList.add("_header-show") : null;
-                        timer = setTimeout((() => {
-                            !header.classList.contains("_header-show") ? header.classList.add("_header-show") : null;
-                        }), headerShowTimer);
-                    }
-                } else {
-                    header.classList.contains("_header-scroll") ? header.classList.remove("_header-scroll") : null;
-                    header.classList.remove("compensate-for-scrollbar");
-                    main.style.paddingTop = 0;
-                    if (headerShow) header.classList.contains("_header-show") ? header.classList.remove("_header-show") : null;
-                }
-                scrollDirection = scrollTop <= 0 ? 0 : scrollTop;
-            }));
-        }
         setTimeout((() => {
             if (addWindowScrollEvent) {
                 let windowScroll = new Event("windowScroll");
@@ -1857,10 +1825,25 @@
         Fancybox.bind("[data-fancybox]", {
             autoFocus: false
         });
+        const header = document.querySelector(".header");
+        const main = document.querySelector(".page");
+        const headerOffset = header.offsetHeight + "px";
+        main.style.paddingTop = headerOffset;
+        document.addEventListener("scroll", (function(e) {
+            const scrollTop = window.scrollY;
+            if (scrollTop > 120) {
+                header.classList.add("_header-scroll");
+                const headerOffset = header.offsetHeight + "px";
+                main.style.paddingTop = headerOffset;
+            } else {
+                header.classList.remove("_header-scroll");
+                const headerOffset = header.offsetHeight + "px";
+                main.style.paddingTop = headerOffset;
+            }
+        }));
         window["FLS"] = true;
         isWebp();
         addLoadedClass();
         spollers();
-        headerScroll();
     })();
 })();

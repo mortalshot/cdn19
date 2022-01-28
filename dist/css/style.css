@@ -172,6 +172,7 @@ h6 {
 }
 .wrapper > main {
   flex: 1 1 auto;
+  transition: 0.3s ease padding 0s;
 }
 .wrapper > * {
   min-width: 0;
@@ -1436,6 +1437,12 @@ img {
 .header {
   background: #f1f1f1;
   z-index: 5;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  box-shadow: 5px 7px 5px -5px rgba(181, 181, 181, 0.1);
+  transition: 0.3s ease padding 0s;
 }
 @media (min-width: 77.5em) {
   .header {
@@ -1491,14 +1498,9 @@ img {
   }
 }
 .header._header-scroll {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  box-shadow: 5px 7px 5px -5px rgba(181, 181, 181, 0.1);
-  transition: 0.3s ease top 0s;
+  transition: 0.3s ease padding 0s;
 }
 .header__container {
   display: flex;
@@ -1913,7 +1915,7 @@ img {
   }
 }
 .main__image {
-  max-width: 61.3125rem;
+  max-width: 64.875rem;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -1938,11 +1940,32 @@ img {
 }
 .main__image svg {
   position: absolute;
-  top: 0.9375rem;
-  left: 50%;
+  left: 52.5%;
   transform: translateX(-50%);
   max-width: 100%;
   height: auto;
+}
+@media (min-width: 77.5em) {
+  .main__image svg {
+    top: 0.9375rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 77.5em) {
+  @supports (top: clamp( 0.00000625rem , -0.3260785326rem  +  1.630423913vw , 0.9375rem )) {
+    .main__image svg {
+      top: clamp( 0.00000625rem , -0.3260785326rem  +  1.630423913vw , 0.9375rem );
+    }
+  }
+  @supports not (top: clamp( 0.00000625rem , -0.3260785326rem  +  1.630423913vw , 0.9375rem )) {
+    .main__image svg {
+      top: calc(0.00000625rem + 0.9375 * (100vw - 20rem) / 57.5);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .main__image svg {
+    top: 0.00000625rem;
+  }
 }
 .main__image #main-pin {
   animation: translateY 1s ease infinite;

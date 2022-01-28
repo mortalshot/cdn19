@@ -58,6 +58,12 @@
 	@include adaptiveValue("padding-bottom", 39, 16);
 	background: $Grey;
 	z-index: 5;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	box-shadow: 5px 7px 5px -5px rgba(181, 181, 181, 0.1);
+	transition: $transition ease padding 0s;
 
 	@media (min-width: $tablet) {
 		transform: translateY(-100%);
@@ -69,14 +75,9 @@
 	}
 
 	&._header-scroll {
-		position: fixed;
-		left: 0;
-		right: 0;
-		top: 0;
 		padding-top: rem(16);
 		padding-bottom: rem(16);
-		box-shadow: 5px 7px 5px -5px rgba(181, 181, 181, 0.1);
-		transition: $transition ease top 0s;
+		transition: $transition ease padding 0s;
 	}
 
 	// .header__container

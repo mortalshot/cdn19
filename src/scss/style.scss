@@ -82,6 +82,7 @@ body {
 	// Прижимаем footer
 	> main {
 		flex: 1 1 auto;
+		transition: $transition ease padding 0s;
 	}
 	// Фикс для слайдеров
 	> * {
