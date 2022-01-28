@@ -72,15 +72,11 @@
 		position: fixed;
 		left: 0;
 		right: 0;
-		top: -200%;
+		top: 0;
 		padding-top: rem(16);
 		padding-bottom: rem(16);
 		box-shadow: 5px 7px 5px -5px rgba(181, 181, 181, 0.1);
 		transition: $transition ease top 0s;
-	}
-
-	&._header-show {
-		top: 0;
 	}
 
 	// .header__container
