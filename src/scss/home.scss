@@ -65,10 +65,12 @@
 
         svg {
             position: absolute;
-            @include adaptiveValue("top", 15, 0, 1280, 768, 1);
+            @include adaptiveValue("top", 15, 8, 1280, 768, 1);
+            @include adaptiveValue("top", 8, 4, 767.98, 320, 0);
             left: 52.5%;
             transform: translateX(-50%);
-            max-width: 100%;
+            @include adaptiveValue("max-width", 763, 573, 1280, 768, 1);
+            @include adaptiveValue("max-width", 573, 240, 767.98, 320, 0);
             height: auto;
         }
 

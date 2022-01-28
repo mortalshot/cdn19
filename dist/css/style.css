@@ -1942,7 +1942,6 @@ img {
   position: absolute;
   left: 52.5%;
   transform: translateX(-50%);
-  max-width: 100%;
   height: auto;
 }
 @media (min-width: 80em) {
@@ -1951,20 +1950,76 @@ img {
   }
 }
 @media (min-width: 48em) and (max-width: 80em) {
-  @supports (top: clamp( 0.00000625rem , -1.406234375rem  +  2.9296679688vw , 0.9375rem )) {
+  @supports (top: clamp( 0.5rem , -0.15625rem  +  1.3671875vw , 0.9375rem )) {
     .main__image svg {
-      top: clamp( 0.00000625rem , -1.406234375rem  +  2.9296679688vw , 0.9375rem );
+      top: clamp( 0.5rem , -0.15625rem  +  1.3671875vw , 0.9375rem );
     }
   }
-  @supports not (top: clamp( 0.00000625rem , -1.406234375rem  +  2.9296679688vw , 0.9375rem )) {
+  @supports not (top: clamp( 0.5rem , -0.15625rem  +  1.3671875vw , 0.9375rem )) {
     .main__image svg {
-      top: calc(0.00000625rem + 0.9375 * (100vw - 48rem) / 32);
+      top: calc(0.5rem + 0.4375 * (100vw - 48rem) / 32);
     }
   }
 }
 @media (max-width: 48em) {
   .main__image svg {
-    top: 0.00000625rem;
+    top: 0.5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 47.99875em) {
+  @supports (top: clamp( 0.25rem , 0.0714205991rem  +  0.8928970043vw , 0.5rem )) {
+    .main__image svg {
+      top: clamp( 0.25rem , 0.0714205991rem  +  0.8928970043vw , 0.5rem );
+    }
+  }
+  @supports not (top: clamp( 0.25rem , 0.0714205991rem  +  0.8928970043vw , 0.5rem )) {
+    .main__image svg {
+      top: calc(0.25rem + 0.25 * (100vw - 20rem) / 27.99875);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .main__image svg {
+    top: 0.25rem;
+  }
+}
+@media (min-width: 80em) {
+  .main__image svg {
+    max-width: 47.6875rem;
+  }
+}
+@media (min-width: 48em) and (max-width: 80em) {
+  @supports (max-width: clamp( 35.8125rem , 18rem  +  37.109375vw , 47.6875rem )) {
+    .main__image svg {
+      max-width: clamp( 35.8125rem , 18rem  +  37.109375vw , 47.6875rem );
+    }
+  }
+  @supports not (max-width: clamp( 35.8125rem , 18rem  +  37.109375vw , 47.6875rem )) {
+    .main__image svg {
+      max-width: calc(35.8125rem + 11.875 * (100vw - 48rem) / 32);
+    }
+  }
+}
+@media (max-width: 48em) {
+  .main__image svg {
+    max-width: 35.8125rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 47.99875em) {
+  @supports (max-width: clamp( 15rem , 0.1332648779rem  +  74.3336756105vw , 35.8125rem )) {
+    .main__image svg {
+      max-width: clamp( 15rem , 0.1332648779rem  +  74.3336756105vw , 35.8125rem );
+    }
+  }
+  @supports not (max-width: clamp( 15rem , 0.1332648779rem  +  74.3336756105vw , 35.8125rem )) {
+    .main__image svg {
+      max-width: calc(15rem + 20.8125 * (100vw - 20rem) / 27.99875);
+    }
+  }
+}
+@media (max-width: 20em) {
+  .main__image svg {
+    max-width: 15rem;
   }
 }
 .main__image #main-pin {
