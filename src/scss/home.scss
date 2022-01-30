@@ -208,15 +208,15 @@
         transform: translateY(100%);
         transition: $transition ease all 0s;
 
-        &:link {
-            text-decoration: underline $White from-font;
-            text-underline-offset: 3px;
-
-            @media (any-hover: hover) {
-                &:hover {
-                    text-decoration: underline transparent from-font;
-                }
-            }
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: $White;
+            position: absolute;
+            bottom: rem(-3);
+            left: 0;
         }
     }
 

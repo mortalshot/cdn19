@@ -2300,14 +2300,15 @@ img {
     font-size: 1.25rem;
   }
 }
-.total-result__request:link {
-  text-decoration: underline #fff from-font;
-  text-underline-offset: 3px;
-}
-@media (any-hover: hover) {
-  .total-result__request:link:hover {
-    text-decoration: underline transparent from-font;
-  }
+.total-result__request::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  bottom: -0.1875rem;
+  left: 0;
 }
 .total-result._request .total-result__text {
   transform: translateY(-100%);
