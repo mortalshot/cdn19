@@ -1814,13 +1814,10 @@
         document.addEventListener("click", documentActions);
         function documentActions(e) {
             const targetElement = e.target;
-            if (targetElement.classList.contains("language__menu") || targetElement.closest(".language__menu")) {
+            if (targetElement.classList.contains("language__link") || targetElement.closest(".language__link")) {
+                e.preventDefault();
                 document.querySelector(".language__menu").classList.toggle("_active");
-                e.preventDefault();
-            } else if (!targetElement.closest(".language__menu") && document.querySelector(".language__menu._active")) {
-                document.querySelector(".language__menu").classList.remove("_active");
-                e.preventDefault();
-            }
+            } else if (!targetElement.closest(".language__menu") && document.querySelector(".language__menu._active")) document.querySelector(".language__menu").classList.remove("_active"); else document.querySelector(".language__menu").classList.remove("_active");
         }
         Fancybox.bind("[data-fancybox]", {
             autoFocus: false
