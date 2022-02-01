@@ -55,7 +55,7 @@
 
 			&__button {
 				@include adaptiveValue("font-size", 30, 24);
-				
+
 				&:not(:first-child) {
 					margin-top: 0;
 				}
@@ -116,6 +116,118 @@
 
 			// .options__text
 			&__text {
+			}
+		}
+	}
+
+	// .popup_cookie
+	&_cookie {
+		max-width: rem(1180);
+		margin-top: auto;
+	}
+}
+
+.cookie-wrapper {
+	&.fancybox__container {
+		@media (max-width: $mobileSmall) {
+			padding-left: rem(20);
+			padding-right: rem(20);
+		}
+	}
+
+	.fancybox__slide {
+		overflow: hidden;
+		@include adaptiveValue("padding-bottom", 50, 0, 1280, 768, 1);
+
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+
+	.carousel__button {
+		display: none;
+	}
+}
+
+.cookie {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 100%;
+
+	// .cookie__img
+	&__img {
+		@include adaptiveValue("margin-right", 32, 24);
+		flex-shrink: 0;
+		@include adaptiveValue("flex-basis", 60, 38);
+		@include adaptiveValue("padding-bottom", 60, 38);
+		position: relative;
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	// .cookie__title
+	&__title {
+		flex: 1;
+		@include adaptiveValue("font-size", 18, 16);
+
+		@media (min-width: $mobileSmall) {
+			max-width: rem(354);
+		}
+
+		a {
+			position: relative;
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				bottom: rem(-2);
+				display: block;
+				width: 100%;
+				height: rem(1);
+				background-color: $mainColor;
+				transition: $transition ease opacity 0s;
+			}
+
+			@media (any-hover: hover) {
+				&:hover {
+					&::before {
+						opacity: 0;
+					}
+				}
+			}
+		}
+	}
+
+	// .cookie__btn
+	&__btn {
+		flex: 1;
+
+		@media (min-width: $mobile) {
+			display: flex;
+			justify-content: flex-end;
+		}
+		@media (max-width: $mobile) {
+			flex: 0 0 100%;
+			margin-top: rem(32);
+			@include adaptiveValue("padding-left", 92, 62);
+		}
+
+		.popup-link {
+			@include adaptiveValue("font-size", 30, 20);
+
+			&::before {
+				@include adaptiveValue("font-size", 12, 7);
+				margin-left: rem(24);
 			}
 		}
 	}

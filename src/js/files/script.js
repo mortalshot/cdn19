@@ -43,3 +43,31 @@ document.addEventListener("scroll", function (e) {
         main.style.paddingTop = headerOffset;
     }
 })
+
+const cookie = document.getElementById("cookie");
+const cookieClose = document.querySelector('.cookie__btn .popup-link');
+
+cookieClose.addEventListener('click', function (e) {
+    Fancybox.destroy();
+    localStorage.setItem('cookieconsent', true);
+    e.preventDefault();
+})
+
+
+if (!localStorage.getItem('cookieconsent')) {
+    setTimeout(() => {
+        Fancybox.show(
+            [
+                {
+                    type: "html",
+                    src: cookie,
+                }
+            ],
+            {
+                mainClass: "cookie-wrapper",
+                autoFocus: false,
+                touch: false,
+            }
+        )
+    }, 3000);
+}
