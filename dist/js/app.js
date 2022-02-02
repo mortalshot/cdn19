@@ -1841,7 +1841,7 @@
         const cookie = document.getElementById("cookie");
         const cookieClose = document.querySelector(".cookie__btn .popup-link");
         cookieClose.addEventListener("click", (function(e) {
-            Fancybox.destroy();
+            Fancybox.close();
             localStorage.setItem("cookieconsent", true);
             e.preventDefault();
         }));
