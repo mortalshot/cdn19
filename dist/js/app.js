@@ -1854,7 +1854,7 @@
                 autoFocus: false,
                 touch: false
             });
-        }), 3e3);
+        }), 5e3);
         window["FLS"] = true;
         isWebp();
         addLoadedClass();

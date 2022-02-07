@@ -69,5 +69,5 @@ if (!localStorage.getItem('cookieconsent')) {
                 touch: false,
             }
         )
-    }, 3000);
+    }, 5000);
 }
