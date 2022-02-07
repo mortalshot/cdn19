@@ -488,6 +488,7 @@
 }
 
 .solution {
+    padding-top: rem(20);
     @include adaptiveValue("padding-bottom", 23, 0, 1280, 992, 1);
     
     // .solution__container

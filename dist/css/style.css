@@ -3076,6 +3076,9 @@ img {
   }
 }
 
+.solution {
+  padding-top: 1.25rem;
+}
 @media (min-width: 80em) {
   .solution {
     padding-bottom: 1.4375rem;
