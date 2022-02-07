@@ -1609,13 +1609,13 @@ img {
 
 @keyframes translateY {
   0% {
-    transform: translateY(0rem);
+    transform: translateY(0.25rem);
   }
   50% {
-    transform: translateY(-0.4375rem);
+    transform: translateY(-0.1875rem);
   }
   100% {
-    transform: translateY(0rem);
+    transform: translateY(0.25rem);
   }
 }
 .noUi-tooltip {
@@ -2306,6 +2306,7 @@ img {
   }
 }
 .main__image #main-pin {
+  transform: translateY(0.25rem);
   animation: translateY 1s ease infinite;
 }
 @media (min-width: 61.99875em) {
@@ -3075,6 +3076,28 @@ img {
   }
 }
 
+@media (min-width: 80em) {
+  .solution {
+    padding-bottom: 1.4375rem;
+  }
+}
+@media (min-width: 62em) and (max-width: 80em) {
+  @supports (padding-bottom: clamp( 0.00000625rem , -4.9513611111rem  +  7.9860763889vw , 1.4375rem )) {
+    .solution {
+      padding-bottom: clamp( 0.00000625rem , -4.9513611111rem  +  7.9860763889vw , 1.4375rem );
+    }
+  }
+  @supports not (padding-bottom: clamp( 0.00000625rem , -4.9513611111rem  +  7.9860763889vw , 1.4375rem )) {
+    .solution {
+      padding-bottom: calc(0.00000625rem + 1.4375 * (100vw - 62rem) / 18);
+    }
+  }
+}
+@media (max-width: 62em) {
+  .solution {
+    padding-bottom: 0.00000625rem;
+  }
+}
 @media (min-width: 80em) {
   .solution__body {
     padding-top: 13.75rem;

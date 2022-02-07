@@ -76,6 +76,7 @@
         }
 
         #main-pin {
+            transform: translateY(rem(4));
             animation: translateY 1s ease infinite;
 
             @media (min-width: $tablet) {
@@ -209,7 +210,7 @@
         transition: $transition ease all 0s;
 
         &::before {
-            content: '';
+            content: "";
             display: block;
             width: 100%;
             height: 1px;
@@ -487,6 +488,8 @@
 }
 
 .solution {
+    @include adaptiveValue("padding-bottom", 23, 0, 1280, 992, 1);
+    
     // .solution__container
     &__container {
     }

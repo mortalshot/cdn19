@@ -130,13 +130,13 @@ img {
 // Анимация ====================================================================================================
 @keyframes translateY {
     0% {
-        transform: translateY(rem(0));
+        transform: translateY(rem(4));
     }
     50% {
-        transform: translateY(rem(-7));
+        transform: translateY(rem(-3));
     }
     100% {
-        transform: translateY(rem(0));
+        transform: translateY(rem(4));
     }
 }
 
